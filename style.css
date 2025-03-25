@@ -5,17 +5,22 @@
 body {
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-svg {
+.title svg {
     fill: white;
     height: 60px;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.add-book svg {
+    fill: white;
+    height: 30px;
 }
 
 h1 {
@@ -24,8 +29,53 @@ h1 {
 
 .header {
     display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+.title, .add-book {
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    margin-top: 20px;
+}
+
+.add-book-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.bookshelf {
+    margin: 0 20px;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 70vh;
+}
+
+.footer {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.book-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    justify-content: flex-start;
+    width: 30vw;
+}
+
+.book-cover {
+    display: flex;
+    height: 250px;
+    padding: 10px;
+}
+
+.book-info {
+    padding: 10px;
 }
