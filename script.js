@@ -49,7 +49,7 @@ function displayEachBook() {
 
 
 
-const 
+
 
 const bookshelf = document.querySelector('.bookshelf')
 
