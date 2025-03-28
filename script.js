@@ -1,4 +1,9 @@
 let myLibrary = [];
+const bookNameField = document.getElementById("name");
+const bookAuthorField = document.getElementById("author");
+const bookPagesField = document.getElementById("pages");
+const bookReadStatus = document.getElementById("readStatus");
+const form = document.getElementById("bookForm");
 
 function Book(title, author, pages, read) {
   if (!new.target) {
@@ -79,26 +84,24 @@ addBookButton.addEventListener("click", () => {
 const submitBookButton = document.getElementById("submit-book");
 submitBookButton.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(bookReadStatus)
-  addBookToLibrary(
-    bookNameField.value,
-    bookAuthorField.value,
-    bookPagesField.value,
-    bookReadStatus.value === "true"
-  );
-  modal.close();
-  displayEachBook();
+  if (form.checkValidity()) {
+    addBookToLibrary(
+      bookNameField.value,
+      bookAuthorField.value,
+      bookPagesField.value,
+      bookReadStatus.value === "true"
+    );
+    modal.close();
+    displayEachBook();
+  } else {
+    form.reportValidity();
+  }
 });
 
 function removeBook(bookId) {
   myLibrary = myLibrary.filter((book) => book.id !== bookId);
   displayEachBook();
 }
-
-const bookNameField = document.getElementById("name");
-const bookAuthorField = document.getElementById("author");
-const bookPagesField = document.getElementById("pages");
-const bookReadStatus = document.getElementById("readStatus");
 
 function startUp() {
   addBookToLibrary("Crime and Punishment", "Fyodor Dostoevsky", 488, true);
